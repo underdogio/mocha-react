@@ -11,6 +11,7 @@
     "react-addons-test-utils": "^15.6.0"
   },
   "peerDependencies": {
+    "mocha": "^3.4.2",
     "react": "^15.6.0",
     "react-dom": "^15.6.0"
   }
