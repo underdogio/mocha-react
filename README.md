@@ -18,13 +18,13 @@ Utilities for testing React applications with Mocha. Includes [enzyme](https://w
   import reactUtils from 'underdog-mocha-react';
 
   describe('A sufficiently thorough test', function () {
-    // Injects a helper method for rendering elements with enzyme.mount, this.render().
+    // Returns a helper method for rendering elements with enzyme.mount, render().
     // Also creates a fake dom with jsdom, accessible from global.window.
-    reactUtils();
+    const {render} = reactUtils();
 
     it('confirms all the things', function () {
-      // Render component with this.render() to get an Enzyme wrapper via enzyme.mount().
-      const wrapper = this.render(
+      // Render component render() to get an Enzyme wrapper via enzyme.mount().
+      const wrapper = render(
         <a href="/test">Hey there</a>
       );
 
