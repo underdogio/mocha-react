@@ -20,7 +20,7 @@ Utilities for testing React applications with Mocha. Includes [enzyme](https://w
   describe('A sufficiently thorough test', function () {
     // Returns a helper method for rendering elements with enzyme.mount, render().
     // Also creates a fake dom with jsdom, accessible from global.window.
-    const {render} = reactUtils();
+    const {render, simulateDOMEvent} = reactUtils();
 
     it('confirms all the things', function () {
       // Render component render() to get an Enzyme wrapper via enzyme.mount().
@@ -31,6 +31,11 @@ Utilities for testing React applications with Mocha. Includes [enzyme](https://w
       // You also get a fake window object for your tests.
       // This is useful for simulating events with wrapper.find('...').simulate().
       assert.notEqual(typeof window, 'undefined');
+
+      // Test how your component reacts to DOM events with simulateDOMEvent()
+      simulateDOMEvent(document, 'keydown', {
+        keyCode: 27
+      });
     });
   });
   ```
