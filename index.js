@@ -8,6 +8,9 @@ module.exports = function mochaReactUtils ({domMarkup} = {}) {
     global.window = new JSDOM(domMarkup).window;
     global.document = window.document;
 
+    // Mock request animation frame. Invoke passed function immediately.
+    global.requestAnimationFrame = (fn) => fn();
+
     // Let React know there is a DOM to prevent 'Invariant Violation' errors from occurring.
     // See https://stackoverflow.com/questions/26867535/calling-setstate-in-jsdom-based-tests-causing-cannot-render-markup-in-a-worker
     ExecutionEnvironment.canUseDOM = true;
@@ -20,6 +23,7 @@ module.exports = function mochaReactUtils ({domMarkup} = {}) {
     // Tear down fake dom once tests are complete
     delete global.window;
     delete global.document;
+    delete global.requestAnimationFrame;
   });
 
   // Create helper function for rendering a react element
