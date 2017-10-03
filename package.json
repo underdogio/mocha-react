@@ -23,6 +23,7 @@
     "babel-register": "^6.26.0",
     "expect": "^21.2.1",
     "mocha": "^4.0.0",
-    "react": "^15.6.2"
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
   }
 }
