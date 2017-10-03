@@ -6,15 +6,29 @@
     "type": "git",
     "url": "https://github.com/underdogio/mocha-react.git"
   },
+  "scripts": {
+    "test": "mocha --require babel-register --reporter dot",
+    "test/watch": "npm run test -- --watch"
+  },
   "dependencies": {
     "enzyme": "^2.9.1",
-    "jsdom": "^11.1.0",
-    "react-addons-test-utils": "^15.6.0"
+    "fbjs": "^0.8.16",
+    "jsdom": "^11.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "expect": "^1.20.2",
+    "mocha": "^4.0.0",
+    "react": "^15.6.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "sinon": "^4.0.0"
   },
   "peerDependencies": {
-    "fbjs": "^0.8.12",
-    "mocha": "^3.5.0",
-    "react": "^15.6.0",
-    "react-dom": "^15.6.0"
+    "mocha": "^4.0.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
   }
 }
