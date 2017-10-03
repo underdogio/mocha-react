@@ -10,6 +10,15 @@ function TestComponent ({onClick}) {
   );
 }
 
+describe('Exports', function () {
+  const {render, simulateDOMEvent} = reactUtils();
+
+  it('a function', function () {
+    expect(render).toBeA('function');
+    expect(simulateDOMEvent).toBeA('function');
+  });
+});
+
 describe('An example test', function () {
   const {render} = reactUtils();
 
