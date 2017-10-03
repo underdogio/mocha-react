@@ -1,6 +1,12 @@
-const {JSDOM} = require('jsdom');
+const Enzyme = require('enzyme');
+const EnzymeAdapter = require('enzyme-adapter-react-16');
 const ExecutionEnvironment = require('fbjs/lib/ExecutionEnvironment');
+const {JSDOM} = require('jsdom');
 const {mount} = require('enzyme');
+
+Enzyme.configure({
+  adapter: new EnzymeAdapter()
+});
 
 module.exports = function mochaReactUtils ({domMarkup} = {}) {
   before(function () {

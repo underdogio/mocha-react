@@ -11,9 +11,11 @@
     "test/watch": "npm run test -- --watch"
   },
   "dependencies": {
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "fbjs": "^0.8.16",
-    "jsdom": "^11.1.0"
+    "jsdom": "^11.1.0",
+    "react-test-renderer": "^16.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
@@ -21,14 +23,13 @@
     "babel-register": "^6.26.0",
     "expect": "^1.20.2",
     "mocha": "^4.0.0",
-    "react": "^15.6.2",
-    "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "sinon": "^4.0.0"
   },
   "peerDependencies": {
     "mocha": "^4.0.0",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
