@@ -6,6 +6,10 @@
     "type": "git",
     "url": "https://github.com/underdogio/mocha-react.git"
   },
+  "scripts": {
+    "test": "mocha --require babel-register --reporter dot",
+    "test/watch": "npm run test -- --watch"
+  },
   "dependencies": {
     "enzyme": "^2.9.1",
     "jsdom": "^11.1.0",
