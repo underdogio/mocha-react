@@ -18,6 +18,7 @@
     "react-dom": "^15.6.0"
   },
   "devDependencies": {
+    "expect": "^21.2.1",
     "mocha": "^4.0.0"
   }
 }
