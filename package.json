@@ -16,5 +16,8 @@
     "mocha": "^3.5.0",
     "react": "^15.6.0",
     "react-dom": "^15.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.0"
   }
 }
