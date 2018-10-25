@@ -13,6 +13,7 @@ module.exports = function mochaReactUtils ({domMarkup} = {}) {
     // Create a fake dom before starting tests
     global.window = new JSDOM(domMarkup).window;
     global.document = window.document;
+    global.navigator = window.navigator;
 
     // Mock request animation frame. Invoke passed function immediately.
     global.requestAnimationFrame = (fn) => fn();
@@ -29,6 +30,7 @@ module.exports = function mochaReactUtils ({domMarkup} = {}) {
     // Tear down fake dom once tests are complete
     delete global.window;
     delete global.document;
+    delete global.navigator;
     delete global.requestAnimationFrame;
   });
 
