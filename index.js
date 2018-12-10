@@ -9,30 +9,33 @@ Enzyme.configure({
 });
 
 module.exports = function mochaReactUtils ({domMarkup} = {}) {
-  before(function () {
-    // Create a fake dom before starting tests
-    global.window = new JSDOM(domMarkup).window;
-    global.document = window.document;
-    global.navigator = window.navigator;
+  // Prevent overwriting existing DOM environment.
+  if (typeof window === 'undefined') {
+    before(function () {
+      // Create a fake dom before starting tests
+      global.window = new JSDOM(domMarkup).window;
+      global.document = window.document;
+      global.navigator = window.navigator;
 
-    // Mock request animation frame. Invoke passed function immediately.
-    global.requestAnimationFrame = (fn) => fn();
+      // Mock request animation frame. Invoke passed function immediately.
+      global.requestAnimationFrame = (fn) => fn();
 
-    // Let React know there is a DOM to prevent 'Invariant Violation' errors from occurring.
-    // See https://stackoverflow.com/questions/26867535/calling-setstate-in-jsdom-based-tests-causing-cannot-render-markup-in-a-worker
-    ExecutionEnvironment.canUseDOM = true;
-  });
+      // Let React know there is a DOM to prevent 'Invariant Violation' errors from occurring.
+      // See https://stackoverflow.com/questions/26867535/calling-setstate-in-jsdom-based-tests-causing-cannot-render-markup-in-a-worker
+      ExecutionEnvironment.canUseDOM = true;
+    });
 
-  after(function () {
-    // Let React know DOM is no longer available.
-    ExecutionEnvironment.canUseDOM = false;
+    after(function () {
+      // Let React know DOM is no longer available.
+      ExecutionEnvironment.canUseDOM = false;
 
-    // Tear down fake dom once tests are complete
-    delete global.window;
-    delete global.document;
-    delete global.navigator;
-    delete global.requestAnimationFrame;
-  });
+      // Tear down fake dom once tests are complete
+      delete global.window;
+      delete global.document;
+      delete global.navigator;
+      delete global.requestAnimationFrame;
+    });
+  }
 
   // Create helper function for rendering a react element
   const render = function (element) {
