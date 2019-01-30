@@ -8,7 +8,9 @@ Enzyme.configure({
   adapter: new EnzymeAdapter()
 });
 
-module.exports = function mochaReactUtils ({domMarkup, options = {}} = {}) {
+module.exports = function mochaReactUtils ({domMarkup, options = {
+  url: 'http://localhost'
+}} = {}) {
   // Prevent overwriting existing DOM environment.
   if (typeof window === 'undefined') {
     before(function () {
