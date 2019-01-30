@@ -8,12 +8,12 @@ Enzyme.configure({
   adapter: new EnzymeAdapter()
 });
 
-module.exports = function mochaReactUtils ({domMarkup} = {}) {
+module.exports = function mochaReactUtils ({domMarkup, options = {}} = {}) {
   // Prevent overwriting existing DOM environment.
   if (typeof window === 'undefined') {
     before(function () {
       // Create a fake dom before starting tests
-      global.window = new JSDOM(domMarkup).window;
+      global.window = new JSDOM(domMarkup, options).window;
       global.document = window.document;
       global.navigator = window.navigator;
 
