@@ -13,7 +13,7 @@
   "dependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
-    "fbjs": "^0.8.16",
+    "fbjs": "^1.0.0",
     "jsdom": "^11.1.0",
     "react-test-renderer": "^16.8.6"
   },
