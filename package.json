@@ -23,13 +23,13 @@
     "babel-register": "^6.26.0",
     "expect": "^1.20.2",
     "mocha": "^4.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "sinon": "^4.0.0"
   },
   "peerDependencies": {
     "mocha": "^4.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
