@@ -1,4 +1,3 @@
-const ExecutionEnvironment = require('fbjs/lib/ExecutionEnvironment');
 const React = require('react');
 const expect = require('expect');
 const {spy} = require('sinon');
@@ -48,7 +47,6 @@ describe('An example test', function () {
     expect(window).toNotBeAn('undefined');
     expect(document).toNotBeAn('undefined');
     expect(requestAnimationFrame).toBeA('function');
-    expect(ExecutionEnvironment.canUseDOM).toEqual(true);
   });
 
   it('returns an enzyme wrapper', function () {
